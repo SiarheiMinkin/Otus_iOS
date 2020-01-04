@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2496609B-B412-4105-96E5-18454B6E4601"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9A20962-EC96-41A4-ACB0-EB4C83C91399"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/MashroomListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30C2BFBC-1254-4F6D-89D7-E9068FEFB225"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/MashroomListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0151B28-84DF-45FF-B2F3-B6C7B61D8FF5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/MashroomListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B0151B28-84DF-45FF-B2F3-B6C7B61D8FF5 - f50e2b94f27a533"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (home1.Mushroom) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.Text, home1.MushroomDetailView&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;home1.Mushroom&gt;, Foundation.UUID, SwiftUI.NavigationLink&lt;SwiftUI.Text, home1.MushroomDetailView&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in home1.MashroomListView.body.getter : some"
+                  moduleName = "home1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Otus_iOS/home1/MashroomListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "205">
+               </Location>
+               <Location
+                  uuid = "B0151B28-84DF-45FF-B2F3-B6C7B61D8FF5 - 705ec4151cd42666"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.Text in closure #1 (home1.Mushroom) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.Text, home1.MushroomDetailView&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;home1.Mushroom&gt;, Foundation.UUID, SwiftUI.NavigationLink&lt;SwiftUI.Text, home1.MushroomDetailView&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in home1.MashroomListView.body.getter : some"
+                  moduleName = "home1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Otus_iOS/home1/MashroomListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDFFD33B-1108-4A92-90E6-27F725FFD2E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/MashroomListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F1C8C1B-E46A-427F-A570-95AF784D3B2E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/WeatherTabView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "onItemShowed(item:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DC4CCE8-67F7-4976-9F74-20BD245FB32E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/WeatherTabView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "simulatePageLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2DC4CCE8-67F7-4976-9F74-20BD245FB32E - 7d5d5c96ed996655"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in home1.CitiesListViewModel.simulatePageLoad() -&gt; ()"
+                  moduleName = "home1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Otus_iOS/home1/WeatherTabView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  uuid = "2DC4CCE8-67F7-4976-9F74-20BD245FB32E - 2c72ebedb6e8e6ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.String in closure #1 () -&gt; () in home1.CitiesListViewModel.simulatePageLoad() -&gt; ()"
+                  moduleName = "home1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Otus_iOS/home1/WeatherTabView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

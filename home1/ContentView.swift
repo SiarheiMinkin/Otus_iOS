@@ -15,20 +15,25 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selection) {
+            WeatherTabView().environmentObject(CitiesListViewModel()).tabItem{Text("Weather")}.tag(0)
             FirstTabView(selectedTabIndex: $selection).environmentObject(mushRoomListModel).tabItem {
                 Text("Любимый гриб")
-            }.tag(0)
+            }.tag(1)
             MashroomListView(selectedTabIndex: $selection).environmentObject(mushRoomListModel).tabItem {
                 VStack {
                     Image(systemName: "list.bullet")
                     Text("Mushroom list")
                 }
-            }.tag(1)
+            }.tag(2)
             
-            ThirdTabView().tabItem {Text("Tab 3")}.tag(2)
+            ThirdTabView().tabItem {Text("Tab 3")}.tag(3)
             
         }
     }
 }
 
-
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

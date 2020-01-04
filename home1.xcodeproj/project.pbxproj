@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846A9E3823C0902700699C2B /* WeatherTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A9E3723C0902700699C2B /* WeatherTabView.swift */; };
+		846A9E3B23C0A70100699C2B /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A9E3A23C0A70100699C2B /* String+Utils.swift */; };
+		846A9E3D23C0B67800699C2B /* RandomAccessCollection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A9E3C23C0B67800699C2B /* RandomAccessCollection+Utils.swift */; };
 		D55F648023994DAD00B0682C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F647F23994DAD00B0682C /* AppDelegate.swift */; };
 		D55F648223994DAD00B0682C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F648123994DAD00B0682C /* SceneDelegate.swift */; };
 		D55F648423994DAD00B0682C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F648323994DAD00B0682C /* ContentView.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		846A9E3723C0902700699C2B /* WeatherTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTabView.swift; sourceTree = "<group>"; };
+		846A9E3A23C0A70100699C2B /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		846A9E3C23C0B67800699C2B /* RandomAccessCollection+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Utils.swift"; sourceTree = "<group>"; };
 		D55F647C23994DAD00B0682C /* home1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = home1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55F647F23994DAD00B0682C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D55F648123994DAD00B0682C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846A9E3923C0A6D800699C2B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				846A9E3A23C0A70100699C2B /* String+Utils.swift */,
+				846A9E3C23C0B67800699C2B /* RandomAccessCollection+Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D55F647323994DAD00B0682C = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +85,11 @@
 		D55F647E23994DAD00B0682C /* home1 */ = {
 			isa = PBXGroup;
 			children = (
+				846A9E3923C0A6D800699C2B /* Extensions */,
 				D55F647F23994DAD00B0682C /* AppDelegate.swift */,
 				D55F648123994DAD00B0682C /* SceneDelegate.swift */,
 				D55F648323994DAD00B0682C /* ContentView.swift */,
+				846A9E3723C0902700699C2B /* WeatherTabView.swift */,
 				D55F64A2239FEF1000B0682C /* FirstTabView.swift */,
 				D5C7E3C523A7C16800C57A5C /* ThirdTabView.swift */,
 				D55F6497239EDF8C00B0682C /* MashroomListView.swift */,
@@ -172,13 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846A9E3B23C0A70100699C2B /* String+Utils.swift in Sources */,
 				D55F648023994DAD00B0682C /* AppDelegate.swift in Sources */,
 				D59AAA8E23A795E80027B270 /* MushroomListModel.swift in Sources */,
 				D55F648223994DAD00B0682C /* SceneDelegate.swift in Sources */,
 				D55F648423994DAD00B0682C /* ContentView.swift in Sources */,
 				D55F649C239EFD4100B0682C /* Mushroom.swift in Sources */,
 				D55F64A1239FEC5700B0682C /* MushroomDetailView.swift in Sources */,
+				846A9E3D23C0B67800699C2B /* RandomAccessCollection+Utils.swift in Sources */,
 				D5C7E3C623A7C16800C57A5C /* ThirdTabView.swift in Sources */,
+				846A9E3823C0902700699C2B /* WeatherTabView.swift in Sources */,
 				D55F6498239EDF8C00B0682C /* MashroomListView.swift in Sources */,
 				D55F64A3239FEF1000B0682C /* FirstTabView.swift in Sources */,
 			);
