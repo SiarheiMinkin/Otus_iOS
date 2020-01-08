@@ -27,13 +27,19 @@ paths:
         description: city longtitude
         required: true
         schema:
-          type: string
-      - name: lan
+          type: number
+      - name: lang
         in: query
         description: language code
         required: true
         schema:
-          type: string      
+          type: string    
+      - name: appid
+        in: query
+        description: api key
+        required: true
+        schema:
+          type: string    
       responses:
         200:
           description: success
@@ -67,17 +73,19 @@ components:
         coord:
           $ref: '#/components/schemas/Coord'
         weather:
-          $ref: '#/components/schemas/Weather'
+          type: array
+          items:
+            $ref: '#/components/schemas/Weather'
         main:
           $ref: '#/components/schemas/Main'
         wind:
           $ref: '#/components/schemas/Wind'
         id:
-          type: string
+          type: number
         name: 
           type: string
         cod: 
-          type: string
+          type: number
         url: 
           type: string
         urlToImage: 
@@ -109,16 +117,16 @@ components:
         humidity:
           type: number
     Weather:
-      type: object
-      properties:
-        id:
-          type: string
-        main:
-          type: string
-        description:
-          type: string
-        icon:
-          type: string
+        type: object
+        properties:
+          id:
+            type: number
+          main:
+            type: string
+          description:
+            type: string
+          icon:
+            type: string
     Coord:
       type: object
       properties:

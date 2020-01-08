@@ -41,7 +41,10 @@ struct WeatherTabView: View {
     @EnvironmentObject var citiesListViewModel: CitiesListViewModel
     
     var body: some View {
-        List(citiesListViewModel.cities) { s in
+        WeatherAPI.everythingGet(lat: 55.453754, lon: 37.05285, lang: "ru", appid: "43ce20e0c8ddaa7ff028165cdfede88d") { (cityWeather, error) in
+            print("sdf")
+        }
+        return List(citiesListViewModel.cities) { s in
             if self.citiesListViewModel.isNewPageLoading &&  self.citiesListViewModel.cities.isLastItem(s) {
                 Divider()
                 Text("Loading...")
