@@ -1,0 +1,128 @@
+openapi: 3.0.1
+info:
+  title: OpenWeather
+  description: openweathermap.org
+  version: 2.5.0
+servers:
+- url: https://api.openweathermap.org/data/2.5/
+tags:
+  - name: Current weather data
+    description: Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations
+paths:
+  /weather/:
+    get:
+      tags: 
+        - weather
+      summary: Call current weather data for one location
+      operationId: everythingGet
+      parameters:
+      - name: lat
+        in: query
+        description: city latitude
+        required: true
+        schema:
+          type: number
+      - name: lon
+        in: query
+        description: city longtitude
+        required: true
+        schema:
+          type: string
+      - name: lan
+        in: query
+        description: language code
+        required: true
+        schema:
+          type: string      
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/CityWeather'
+        default:
+          description: enexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+components:
+  schemas:
+    ErrorModel:
+      type: object
+      required:
+      - message
+      - code
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          minimum: 100
+          maximum: 600
+    CityWeather:
+      type: object
+      properties:
+        coord:
+          $ref: '#/components/schemas/Coord'
+        weather:
+          $ref: '#/components/schemas/Weather'
+        main:
+          $ref: '#/components/schemas/Main'
+        wind:
+          $ref: '#/components/schemas/Wind'
+        id:
+          type: string
+        name: 
+          type: string
+        cod: 
+          type: string
+        url: 
+          type: string
+        urlToImage: 
+          type: string
+        publishedAt: 
+          type: string
+        content: 
+          type: string
+    Wind:
+      type: object
+      properties:
+        speed:
+          type: number
+        deg:
+          type: number
+    Main:
+      type: object
+      properties:
+        temp:
+          type: number
+        feels_like:
+          type: number
+        temp_min:
+          type: number
+        temp_max:
+          type: number
+        pressure:
+          type: number
+        humidity:
+          type: number
+    Weather:
+      type: object
+      properties:
+        id:
+          type: string
+        main:
+          type: string
+        description:
+          type: string
+        icon:
+          type: string
+    Coord:
+      type: object
+      properties:
+        lon:
+          type: number
+        lat:
+          type: number

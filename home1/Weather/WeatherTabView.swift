@@ -9,20 +9,29 @@
 import SwiftUI
 
 final class CitiesListViewModel: ObservableObject {
-    @Published private(set) var cities = Array(0...20).map {"city \($0)"}
     @Published private(set) var pageIndex: Int = 1
     @Published var isNewPageLoading = false
+    @Published private(set) var cities: [City] =  {
+        var result = [City]()
+        guard let regions = WeatherWorker().loadCountryJson()?.regions else {
+            return result
+        }
+        for region in regions {
+            result.append(contentsOf: region.cities)
+        }
+        return result
+    }()
     func simulatePageLoad() {
         guard isNewPageLoading == false else {
             return
         }
         self.pageIndex += 1
         self.isNewPageLoading = true
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            let newPage = (self.cities.count...(self.cities.count + 20)).map{"city \($0)"}
-            self.cities.append(contentsOf: newPage)
-            self.isNewPageLoading = false
-        }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+//            let newPage = (self.cities.count...(self.cities.count + 20)).map{"city \($0.name)"}
+//            self.cities.append(contentsOf: newPage)
+//            self.isNewPageLoading = false
+//        }
     }
 }
 
@@ -37,7 +46,7 @@ struct WeatherTabView: View {
                 Divider()
                 Text("Loading...")
             } else {
-                Text(s).onAppear {
+                Text(s.name).onAppear {
                     self.onItemShowed(item: s)
                 }
             }
@@ -50,9 +59,9 @@ struct WeatherTabView: View {
 extension WeatherTabView {
     func onItemShowed<T:Identifiable>(item: T) {
         
-        if self.citiesListViewModel.cities.isLastItem(item) {
-            self.citiesListViewModel.simulatePageLoad()
-        }
+//        if self.citiesListViewModel.cities.isLastItem(item) {
+//            self.citiesListViewModel.simulatePageLoad()
+//        }
     }
 }
 

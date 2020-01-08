@@ -128,38 +128,22 @@
             endingLineNumber = "22"
             landmarkName = "simulatePageLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2DC4CCE8-67F7-4976-9F74-20BD245FB32E - 7d5d5c96ed996655"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in home1.CitiesListViewModel.simulatePageLoad() -&gt; ()"
-                  moduleName = "home1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Otus_iOS/home1/WeatherTabView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "70">
-               </Location>
-               <Location
-                  uuid = "2DC4CCE8-67F7-4976-9F74-20BD245FB32E - 2c72ebedb6e8e6ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.String in closure #1 () -&gt; () in home1.CitiesListViewModel.simulatePageLoad() -&gt; ()"
-                  moduleName = "home1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Otus_iOS/home1/WeatherTabView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "43">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86DE0AD7-4A3F-45D4-A5A7-CFA100FF77F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "home1/Weather/WeatherTabView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
