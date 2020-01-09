@@ -9,7 +9,7 @@
 import SwiftUI
 
 final class CitiesListViewModel: ObservableObject {
-    @Published private(set) var pageIndex: Int = 1
+    @Published private(set) var cityLoadingIndex: Int = 0
     @Published var isNewPageLoading = false
     @Published private(set) var cities: [City] =  {
         var result = [City]()
@@ -21,17 +21,23 @@ final class CitiesListViewModel: ObservableObject {
         }
         return result
     }()
-    func simulatePageLoad() {
+    @Published var citiesWithWeather = [City]()
+    
+    func cityWeatherLoad() {
         guard isNewPageLoading == false else {
             return
         }
-        self.pageIndex += 1
+        guard self.cityLoadingIndex < cities.count else {
+            return
+        }
         self.isNewPageLoading = true
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-//            let newPage = (self.cities.count...(self.cities.count + 20)).map{"city \($0.name)"}
-//            self.cities.append(contentsOf: newPage)
-//            self.isNewPageLoading = false
-//        }
+        let city = self.cities[self.cityLoadingIndex]
+        WeatherAPI.everythingGet(lat: Double(city.lat), lon: Double(city.lng), lang: "ru", appid: "43ce20e0c8ddaa7ff028165cdfede88d") { (cityWeather, error) in
+            city.cityWeather = cityWeather
+            self.citiesWithWeather.append(contentsOf: [city])
+            self.isNewPageLoading = false
+        }
+        self.cityLoadingIndex += 1
     }
 }
 
@@ -39,21 +45,44 @@ struct WeatherTabView: View {
     
     
     @EnvironmentObject var citiesListViewModel: CitiesListViewModel
+    @State var selectedSegmentIndex: Int = 0
     
     var body: some View {
-        WeatherAPI.everythingGet(lat: 55.453754, lon: 37.05285, lang: "ru", appid: "43ce20e0c8ddaa7ff028165cdfede88d") { (cityWeather, error) in
-            print("sdf")
-        }
-        return List(citiesListViewModel.cities) { s in
-            if self.citiesListViewModel.isNewPageLoading &&  self.citiesListViewModel.cities.isLastItem(s) {
-                Divider()
-                Text("Loading...")
-            } else {
-                Text(s.name).onAppear {
-                    self.onItemShowed(item: s)
+        NavigationView {
+            VStack {
+                SegmentedControl(items: ["Россия", "Беларусь"], selectedSegmentIndex: $selectedSegmentIndex)
+                List(citiesListViewModel.citiesWithWeather) { s in
+                    if self.citiesListViewModel.isNewPageLoading &&  self.citiesListViewModel.cities.isLastItem(s) {
+                        Divider()
+                        Text("Loading...")
+                    } else {
+                        VStack {
+                            Text(s.name).fontWeight(Font.Weight.bold).foregroundColor(.red)
+                            ForEach((s.cityWeather?.weather ?? []), id: \.id){ weather in
+                                Text(weather.description ?? "")
+                            }
+                            VStack {
+                                Text("температура: " + String(format: "%.1f", s.cityWeather?.main?.temp ?? 0))
+                                Text("ощущается как: " + String(format: "%.1f", s.cityWeather?.main?.feelsLike ?? 0))
+                                Text("минимальная температура: " + String(format: "%.1f", s.cityWeather?.main?.tempMin ?? 0))
+                                Text("максимальная температура: " + String(format: "%.1f", s.cityWeather?.main?.tempMax ?? 0))
+                                Text("давление: " + String(format: "%.1f", s.cityWeather?.main?.pressure ?? 0))
+                                Text("влажность: " + String(format: "%.1f", s.cityWeather?.main?.humidity ?? 0))
+                            }
+
+                            
+                            
+                        }.onAppear {
+                            self.onItemShowed(item: s)
+                        }
+                        
+                    }
+                    
                 }
             }
-
+            
+        }.onAppear {
+            self.citiesListViewModel.cityWeatherLoad()
         }
         
     }
@@ -61,10 +90,9 @@ struct WeatherTabView: View {
 
 extension WeatherTabView {
     func onItemShowed<T:Identifiable>(item: T) {
-        
-//        if self.citiesListViewModel.cities.isLastItem(item) {
-//            self.citiesListViewModel.simulatePageLoad()
-//        }
+        if self.citiesListViewModel.citiesWithWeather.isLastItem(item) {
+            self.citiesListViewModel.cityWeatherLoad()
+        }
     }
 }
 

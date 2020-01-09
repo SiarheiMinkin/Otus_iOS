@@ -22,4 +22,5 @@ class City: Codable, Identifiable {
     var name: String
     var lat: Float
     var lng: Float
+    var cityWeather: CityWeather?
 }

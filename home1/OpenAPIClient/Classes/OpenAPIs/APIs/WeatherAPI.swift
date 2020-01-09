@@ -17,10 +17,11 @@ open class WeatherAPI {
      - parameter lon: (query) city longtitude 
      - parameter lang: (query) language code 
      - parameter appid: (query) api key 
+     - parameter units: (query) units (metric/imperial(default)) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func everythingGet(lat: Double, lon: Double, lang: String, appid: String, completion: @escaping ((_ data: CityWeather?,_ error: Error?) -> Void)) {
-        everythingGetWithRequestBuilder(lat: lat, lon: lon, lang: lang, appid: appid).execute { (response, error) -> Void in
+    open class func everythingGet(lat: Double, lon: Double, lang: String, appid: String, units: String? = nil, completion: @escaping ((_ data: CityWeather?,_ error: Error?) -> Void)) {
+        everythingGetWithRequestBuilder(lat: lat, lon: lon, lang: lang, appid: appid, units: units).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -32,9 +33,10 @@ open class WeatherAPI {
      - parameter lon: (query) city longtitude 
      - parameter lang: (query) language code 
      - parameter appid: (query) api key 
+     - parameter units: (query) units (metric/imperial(default)) (optional)
      - returns: RequestBuilder<CityWeather> 
      */
-    open class func everythingGetWithRequestBuilder(lat: Double, lon: Double, lang: String, appid: String) -> RequestBuilder<CityWeather> {
+    open class func everythingGetWithRequestBuilder(lat: Double, lon: Double, lang: String, appid: String, units: String? = nil) -> RequestBuilder<CityWeather> {
         let path = "/weather/"
         let URLString = OpenAPIClientAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -44,7 +46,8 @@ open class WeatherAPI {
             "lat": lat.encodeToJSON(), 
             "lon": lon.encodeToJSON(), 
             "lang": lang.encodeToJSON(), 
-            "appid": appid.encodeToJSON()
+            "appid": appid.encodeToJSON(), 
+            "units": units?.encodeToJSON()
         ])
 
         let requestBuilder: RequestBuilder<CityWeather>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()

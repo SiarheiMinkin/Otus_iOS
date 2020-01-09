@@ -40,6 +40,12 @@ paths:
         required: true
         schema:
           type: string    
+      - name: units
+        in: query
+        description: units (metric/imperial(default))
+        required: false
+        schema:
+          type: string    
       responses:
         200:
           description: success

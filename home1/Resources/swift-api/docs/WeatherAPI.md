@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **everythingGet**
 ```swift
-    open class func everythingGet(lat: Double, lon: Double, lang: String, appid: String, completion: @escaping (_ data: CityWeather?, _ error: Error?) -> Void)
+    open class func everythingGet(lat: Double, lon: Double, lang: String, appid: String, units: String? = nil, completion: @escaping (_ data: CityWeather?, _ error: Error?) -> Void)
 ```
 
 Call current weather data for one location
@@ -23,9 +23,10 @@ let lat = 987 // Double | city latitude
 let lon = 987 // Double | city longtitude
 let lang = "lang_example" // String | language code
 let appid = "appid_example" // String | api key
+let units = "units_example" // String | units (metric/imperial(default)) (optional)
 
 // Call current weather data for one location
-WeatherAPI.everythingGet(lat: lat, lon: lon, lang: lang, appid: appid) { (response, error) in
+WeatherAPI.everythingGet(lat: lat, lon: lon, lang: lang, appid: appid, units: units) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -45,6 +46,7 @@ Name | Type | Description  | Notes
  **lon** | **Double** | city longtitude | 
  **lang** | **String** | language code | 
  **appid** | **String** | api key | 
+ **units** | **String** | units (metric/imperial(default)) | [optional] 
 
 ### Return type
 
