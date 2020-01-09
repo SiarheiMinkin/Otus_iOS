@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selection) {
-            WeatherTabView().environmentObject(CitiesListViewModel()).tabItem{Text("Weather")}.tag(0)
+            WeatherTabView().environmentObject(CitiesListViewModel()).tabItem{Text("Погода")}.tag(0)
             FirstTabView(selectedTabIndex: $selection).environmentObject(mushRoomListModel).tabItem {
                 Text("Любимый гриб")
             }.tag(1)

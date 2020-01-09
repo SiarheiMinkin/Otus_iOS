@@ -14,7 +14,7 @@ struct FirstTabView: View {
     
     var body: some View {
         Button(action: {
-            self.selectedTabIndex = 1
+            self.selectedTabIndex = 0
             self.mashroomListModel.selectedItem = self.mashroomListModel.mushrooms[0]
             
         }) {

@@ -9,11 +9,12 @@
 import SwiftUI
 
 final class CitiesListViewModel: ObservableObject {
+    var currenResource: String = "ru-cities"
     @Published private(set) var cityLoadingIndex: Int = 0
     @Published var isNewPageLoading = false
-    @Published private(set) var cities: [City] =  {
+    private(set) var cities: [City] =  {
         var result = [City]()
-        guard let regions = WeatherWorker().loadCountryJson()?.regions else {
+        guard let regions = WeatherWorker(resource: "ru-cities").loadCountryJson()?.regions else {
             return result
         }
         for region in regions {
@@ -39,17 +40,39 @@ final class CitiesListViewModel: ObservableObject {
         }
         self.cityLoadingIndex += 1
     }
+    
+    func setCitiesList(resource: String) {
+        var result = [City]()
+        guard let regions = WeatherWorker(resource: resource).loadCountryJson()?.regions else {
+            return
+        }
+        for region in regions {
+            result.append(contentsOf: region.cities)
+        }
+        self.cities = result
+        self.currenResource = resource
+        self.citiesWithWeather = [City]()
+    }
 }
 
 struct WeatherTabView: View {
     
     
     @EnvironmentObject var citiesListViewModel: CitiesListViewModel
-    @State var selectedSegmentIndex: Int = 0
+    @State var selectedSegmentIndex: Int = 1
+    
     
     var body: some View {
-        NavigationView {
+        if self.selectedSegmentIndex == 0 && self.citiesListViewModel.currenResource != "ru-cities" {
+            self.citiesListViewModel.setCitiesList(resource: "ru-cities")
+            self.citiesListViewModel.cityWeatherLoad()
+        } else if self.selectedSegmentIndex == 1 && self.citiesListViewModel.currenResource != "by-cities" {
+            self.citiesListViewModel.setCitiesList(resource: "by-cities")
+            self.citiesListViewModel.cityWeatherLoad()
+        }
+       return NavigationView {
             VStack {
+
                 SegmentedControl(items: ["Россия", "Беларусь"], selectedSegmentIndex: $selectedSegmentIndex)
                 List(citiesListViewModel.citiesWithWeather) { s in
                     if self.citiesListViewModel.isNewPageLoading &&  self.citiesListViewModel.cities.isLastItem(s) {
@@ -81,8 +104,6 @@ struct WeatherTabView: View {
                 }
             }
             
-        }.onAppear {
-            self.citiesListViewModel.cityWeatherLoad()
         }
         
     }

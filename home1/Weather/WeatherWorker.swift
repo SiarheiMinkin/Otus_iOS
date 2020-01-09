@@ -9,8 +9,12 @@
 import Foundation
 
 class WeatherWorker {
+    var resource: String //"ru-cities"
+    init(resource: String) {
+        self.resource = resource
+    }
     func loadCountryJson() -> Country? {
-        if let url = Bundle.main.url(forResource: "ru-cities", withExtension: "json") {
+        if let url = Bundle.main.url(forResource: resource, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()

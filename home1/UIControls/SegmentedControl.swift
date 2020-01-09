@@ -18,6 +18,7 @@ struct SegmentedControl: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> UISegmentedControl {
+        selectedSegmentIndex = 0
         let segmentedControl = UISegmentedControl()
         for item in items {
             segmentedControl.insertSegment(withTitle: item, at: items.firstIndex(of: item) ?? 0, animated: false)
