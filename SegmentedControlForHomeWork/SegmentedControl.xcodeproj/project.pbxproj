@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D53B127424118D3D0052F5D6 /* NewsAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = D53B127324118D3D0052F5D6 /* NewsAPIClient */; };
+		D53B127624118D750052F5D6 /* GitAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = D53B127524118D750052F5D6 /* GitAPIClient */; };
+		D53B1279241198C60052F5D6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = D53B1278241198C60052F5D6 /* SwiftUICharts */; };
+		D53B127B24119EE30052F5D6 /* GitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B127A24119EE30052F5D6 /* GitService.swift */; };
+		D53B127F24119FBE0052F5D6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B127E24119FBE0052F5D6 /* Result.swift */; };
+		D53B12822411A20B0052F5D6 /* PieViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B12812411A20B0052F5D6 /* PieViewPresenter.swift */; };
 		D5E975CB240F08DB009149FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D5E975CA240F08DB009149FE /* Alamofire */; };
-		D5E975D4240F0E79009149FE /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = D5E975D3240F0E79009149FE /* OpenAPIClient */; };
 		FA173AC123AB7F8500F6E73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA173AC023AB7F8500F6E73C /* AppDelegate.swift */; };
 		FA173AC323AB7F8500F6E73C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA173AC223AB7F8500F6E73C /* SceneDelegate.swift */; };
 		FA173AC523AB7F8500F6E73C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA173AC423AB7F8500F6E73C /* ContentView.swift */; };
@@ -19,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D53B127224118CE40052F5D6 /* swift-api_news */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "swift-api_news"; sourceTree = "<group>"; };
+		D53B127A24119EE30052F5D6 /* GitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitService.swift; sourceTree = "<group>"; };
+		D53B127E24119FBE0052F5D6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		D53B12812411A20B0052F5D6 /* PieViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewPresenter.swift; sourceTree = "<group>"; };
 		D5E975D2240F0E6E009149FE /* swift-api_git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "swift-api_git"; sourceTree = "<group>"; };
 		FA173ABD23AB7F8500F6E73C /* SegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA173AC023AB7F8500F6E73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5E975D4240F0E79009149FE /* OpenAPIClient in Frameworks */,
 				D5E975CB240F08DB009149FE /* Alamofire in Frameworks */,
+				D53B1279241198C60052F5D6 /* SwiftUICharts in Frameworks */,
+				D53B127424118D3D0052F5D6 /* NewsAPIClient in Frameworks */,
+				D53B127624118D750052F5D6 /* GitAPIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +62,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D53B127C24119EF10052F5D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D53B127A24119EE30052F5D6 /* GitService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D53B127D24119F9F0052F5D6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D53B127E24119FBE0052F5D6 /* Result.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D53B12802411A1B70052F5D6 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				D53B12812411A20B0052F5D6 /* PieViewPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		FA173AB423AB7F8500F6E73C = {
 			isa = PBXGroup;
 			children = (
+				D53B12802411A1B70052F5D6 /* Presenters */,
+				D53B127D24119F9F0052F5D6 /* Utils */,
+				D53B127C24119EF10052F5D6 /* Services */,
+				D53B127224118CE40052F5D6 /* swift-api_news */,
 				D5E975D2240F0E6E009149FE /* swift-api_git */,
 				FA173ABF23AB7F8500F6E73C /* SegmentedControl */,
 				FA173ABE23AB7F8500F6E73C /* Products */,
@@ -110,7 +149,9 @@
 			name = SegmentedControl;
 			packageProductDependencies = (
 				D5E975CA240F08DB009149FE /* Alamofire */,
-				D5E975D3240F0E79009149FE /* OpenAPIClient */,
+				D53B127324118D3D0052F5D6 /* NewsAPIClient */,
+				D53B127524118D750052F5D6 /* GitAPIClient */,
+				D53B1278241198C60052F5D6 /* SwiftUICharts */,
 			);
 			productName = SegmentedControl;
 			productReference = FA173ABD23AB7F8500F6E73C /* SegmentedControl.app */;
@@ -142,6 +183,7 @@
 			mainGroup = FA173AB423AB7F8500F6E73C;
 			packageReferences = (
 				D5E975C9240F08DB009149FE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D53B1277241198C60052F5D6 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = FA173ABE23AB7F8500F6E73C /* Products */;
 			projectDirPath = "";
@@ -170,7 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53B127F24119FBE0052F5D6 /* Result.swift in Sources */,
+				D53B12822411A20B0052F5D6 /* PieViewPresenter.swift in Sources */,
 				FAFBC1E323ABC22A00D534A7 /* Histogram.swift in Sources */,
+				D53B127B24119EE30052F5D6 /* GitService.swift in Sources */,
 				FA173AC123AB7F8500F6E73C /* AppDelegate.swift in Sources */,
 				FA173AC323AB7F8500F6E73C /* SceneDelegate.swift in Sources */,
 				FA173AC523AB7F8500F6E73C /* ContentView.swift in Sources */,
@@ -369,6 +414,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D53B1277241198C60052F5D6 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.9;
+			};
+		};
 		D5E975C9240F08DB009149FE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -380,14 +433,23 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D53B127324118D3D0052F5D6 /* NewsAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NewsAPIClient;
+		};
+		D53B127524118D750052F5D6 /* GitAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GitAPIClient;
+		};
+		D53B1278241198C60052F5D6 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D53B1277241198C60052F5D6 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 		D5E975CA240F08DB009149FE /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D5E975C9240F08DB009149FE /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		D5E975D3240F0E79009149FE /* OpenAPIClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OpenAPIClient;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

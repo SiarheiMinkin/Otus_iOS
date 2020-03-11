@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-import OpenAPIClient
+
+import SwiftUICharts
 
 struct ButtonPressStyle: ButtonStyle {
 
@@ -20,14 +21,34 @@ struct ButtonPressStyle: ButtonStyle {
   }
 
 }
+protocol PieViewProtocol {
+    var cotlinCount: Int { get set }
+    var objCCount: Int { get set }
+}
 
-struct PieView: View {
+struct PieView: View, PieViewProtocol {
     
     @State private var showChart = false
+    @State var cotlinCount = 0 {
+        didSet {
+            print("cotlinCount = \(cotlinCount)")
+        }
+    }
+    @State var objCCount = 0
+    var presenter: PieViewPresenter?
+    
+   init() {
+    }
+    
+
     
     var body: some View {
-
-        VStack(spacing: 10) {
+        GitService().getCotlinCount(completion: {result in
+            if case .success(let count) = result {
+                self.cotlinCount = count
+            }
+        })
+        return VStack(spacing: 10) {
             
             Button(action: {
                 withAnimation {
@@ -43,6 +64,7 @@ struct PieView: View {
                 Text("Pie Chart")
                 .transition(.move(edge: .bottom))
             }
+            PieChartView(data: [Double(cotlinCount),23,54,32], title: "Title", legend: "Legendary") // legend is optional
         }
         .padding(.top, 10)
     }
@@ -55,9 +77,7 @@ struct ContentView: View {
     
     @State private var endpoints = ["Pie", "Bar", "Line"]
     init() {
-        SearchAPI.searchReposGet(q: "Cotlin", order: .asc) { (list, error) in
-            print(list.debugDescription)
-        }
+
     }
     var body: some View {
 
