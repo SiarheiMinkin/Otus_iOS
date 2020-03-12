@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "430C1C63-982E-4308-8819-4F5B35AD129B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "309D9CD0-267C-4B48-AAF5-0CC0ABC549EE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SegmentedControl/PieView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "309D9CD0-267C-4B48-AAF5-0CC0ABC549EE - 5adfa4257b37a5e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SegmentedControl.PieView.body.getter : some"
+                  moduleName = "SegmentedControl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Otus_iOS/SegmentedControlForHomeWork/SegmentedControl/PieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "390">
+               </Location>
+               <Location
+                  uuid = "309D9CD0-267C-4B48-AAF5-0CC0ABC549EE - 8c02b0e4da907ad0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SegmentedControl.Result&lt;Swift.Int&gt;) -&gt; () in SegmentedControl.PieView.body.getter : some"
+                  moduleName = "SegmentedControl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Otus_iOS/SegmentedControlForHomeWork/SegmentedControl/PieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "122">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

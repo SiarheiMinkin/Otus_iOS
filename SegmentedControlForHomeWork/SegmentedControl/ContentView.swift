@@ -21,55 +21,6 @@ struct ButtonPressStyle: ButtonStyle {
   }
 
 }
-protocol PieViewProtocol {
-    var cotlinCount: Int { get set }
-    var objCCount: Int { get set }
-}
-
-struct PieView: View, PieViewProtocol {
-    
-    @State private var showChart = false
-    @State var cotlinCount = 0 {
-        didSet {
-            print("cotlinCount = \(cotlinCount)")
-        }
-    }
-    @State var objCCount = 0
-    var presenter: PieViewPresenter?
-    
-   init() {
-    }
-    
-
-    
-    var body: some View {
-        GitService().getCotlinCount(completion: {result in
-            if case .success(let count) = result {
-                self.cotlinCount = count
-            }
-        })
-        return VStack(spacing: 10) {
-            
-            Button(action: {
-                withAnimation {
-                    self.showChart.toggle()
-                }
-            }) {
-              Text("Custom Button")
-            }
-            
-            .buttonStyle(ButtonPressStyle())
-            
-            if showChart {
-                Text("Pie Chart")
-                .transition(.move(edge: .bottom))
-            }
-            PieChartView(data: [Double(cotlinCount),23,54,32], title: "Title", legend: "Legendary") // legend is optional
-        }
-        .padding(.top, 10)
-    }
-    
-}
 
 struct ContentView: View {
     
@@ -91,14 +42,14 @@ struct ContentView: View {
             if self.selection == 0 {
                 PieView()
             } else if self.selection == 1 {
-                Text("Bar").transition(.scale)
+                BarView()
             } else if self.selection == 2 {
-                Text("Line")
+                LineView()
             }
             
             Spacer()
         }
-        .padding(.horizontal, 20)
+       // .padding(.horizontal, 20)
     }
 }
 
