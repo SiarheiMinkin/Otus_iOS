@@ -10,8 +10,13 @@ import SwiftUI
 
 import SwiftUICharts
 
-struct PieView: View {
-    
+
+protocol PieView {
+    init(gitService: GitService)
+}
+
+struct PieViewImplementation: View, PieView {
+    fileprivate var gitService: GitService
     @State private var showChart = false
     @State var cotlinCount = 0 {
         didSet {
@@ -29,24 +34,25 @@ struct PieView: View {
         }
     }
     
-   init() {
+   init(gitService: GitService) {
+    self.gitService = gitService
     }
     
 
     
     var body: some View {
-        GitService().getCotlinCount(completion: {result in
+        gitService.getCotlinCount(completion: {result in
             if case .success(let count) = result {
                 self.cotlinCount = count
             }
         })
-        GitService().getObjCCount(completion: {result in
+        gitService.getObjCCount(completion: {result in
             if case .success(let count) = result {
                 self.objCCount = count
             }
         })
         
-        GitService().getSwiftCount(completion: {result in
+        gitService.getSwiftCount(completion: {result in
             if case .success(let count) = result {
                 self.swiftCount = count
             }

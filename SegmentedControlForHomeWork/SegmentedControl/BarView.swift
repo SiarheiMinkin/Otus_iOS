@@ -10,8 +10,12 @@ import SwiftUI
 
 import SwiftUICharts
 
-struct BarView: View {
-    
+protocol BarView {
+    init(newsService: NewsService)
+}
+
+struct BarViewImplementation: View, BarView {
+    fileprivate var newsService: NewsService
     @State private var showChart = false
     @State var appleCount = 0 {
         didSet {
@@ -29,25 +33,26 @@ struct BarView: View {
         }
     }
     
-    init() {
+    init(newsService: NewsService) {
+        self.newsService = newsService
     }
     
     
     
     var body: some View {
-        NewsService().getAppleCount(completion: {result in
+        newsService.getAppleCount(completion: {result in
             if case .success(let count) = result {
                 self.appleCount = count
                 
             }
         })
-        NewsService().getBitcoinCount(completion: {result in
+        newsService.getBitcoinCount(completion: {result in
             if case .success(let count) = result {
                 self.bitcoinCount = count
                 
             }
         })
-        NewsService().getNginxCount(completion: {result in
+        newsService.getNginxCount(completion: {result in
             if case .success(let count) = result {
                 self.nginxCount = count
                 

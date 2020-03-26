@@ -22,14 +22,20 @@ struct ButtonPressStyle: ButtonStyle {
 
 }
 
+protocol ContentViewProtocol {
+    init(serviceLocator: ServiceLocator)
+}
+
 struct ContentView: View {
-    
+    private var serviceLocator: ServiceLocator
     @State private var selection = 0
     
     @State private var endpoints = ["Pie", "Bar", "Line"]
-    init() {
-
+    
+    init(serviceLocator: ServiceLocator) {
+        self.serviceLocator = serviceLocator
     }
+    
     var body: some View {
 
         VStack {
@@ -40,9 +46,9 @@ struct ContentView: View {
             }.pickerStyle(SegmentedPickerStyle())
             
             if self.selection == 0 {
-                PieView()
+                PieViewImplementation(gitService: serviceLocator.getService()!)
             } else if self.selection == 1 {
-                BarView()
+                BarViewImplementation(newsService: serviceLocator.getService()!)
             } else if self.selection == 2 {
                 LineView()
             }
@@ -53,8 +59,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(serviceLocator: <#T##ServiceLocator#>)
+//    }
+//}

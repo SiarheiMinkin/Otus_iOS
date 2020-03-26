@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "body"
-            landmarkType = "24">
+            landmarkName = "init(gitService:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "309D9CD0-267C-4B48-AAF5-0CC0ABC549EE - 5adfa4257b37a5e5"

@@ -12,6 +12,7 @@
 		8401296924194A64007BB0A7 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401296824194A64007BB0A7 /* NewsService.swift */; };
 		84A7A5F0241A861400E1426B /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A5EF241A861400E1426B /* LineView.swift */; };
 		84A7A5F3241A8C4A00E1426B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A5F2241A8C4A00E1426B /* Result.swift */; };
+		84FA4488242CEECF0054842D /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA4487242CEECF0054842D /* ServiceLocator.swift */; };
 		D53B127424118D3D0052F5D6 /* NewsAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = D53B127324118D3D0052F5D6 /* NewsAPIClient */; };
 		D53B127624118D750052F5D6 /* GitAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = D53B127524118D750052F5D6 /* GitAPIClient */; };
 		D53B1279241198C60052F5D6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = D53B1278241198C60052F5D6 /* SwiftUICharts */; };
@@ -32,6 +33,7 @@
 		8401296824194A64007BB0A7 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		84A7A5EF241A861400E1426B /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		84A7A5F2241A8C4A00E1426B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		84FA4487242CEECF0054842D /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		D53B127224118CE40052F5D6 /* swift-api_news */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "swift-api_news"; sourceTree = "<group>"; };
 		D53B127A24119EE30052F5D6 /* GitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitService.swift; sourceTree = "<group>"; };
 		D5E975D2240F0E6E009149FE /* swift-api_git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "swift-api_git"; sourceTree = "<group>"; };
@@ -81,22 +83,15 @@
 			children = (
 				D53B127A24119EE30052F5D6 /* GitService.swift */,
 				8401296824194A64007BB0A7 /* NewsService.swift */,
+				84FA4487242CEECF0054842D /* ServiceLocator.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		D53B12802411A1B70052F5D6 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 		FA173AB423AB7F8500F6E73C = {
 			isa = PBXGroup;
 			children = (
 				84A7A5F1241A8C4A00E1426B /* Utils */,
-				D53B12802411A1B70052F5D6 /* Presenters */,
 				D53B127C24119EF10052F5D6 /* Services */,
 				D53B127224118CE40052F5D6 /* swift-api_news */,
 				D5E975D2240F0E6E009149FE /* swift-api_git */,
@@ -224,6 +219,7 @@
 				840129672419492E007BB0A7 /* BarView.swift in Sources */,
 				84012965241948F0007BB0A7 /* PieView.swift in Sources */,
 				8401296924194A64007BB0A7 /* NewsService.swift in Sources */,
+				84FA4488242CEECF0054842D /* ServiceLocator.swift in Sources */,
 				FAFBC1E323ABC22A00D534A7 /* Histogram.swift in Sources */,
 				D53B127B24119EE30052F5D6 /* GitService.swift in Sources */,
 				FA173AC123AB7F8500F6E73C /* AppDelegate.swift in Sources */,
